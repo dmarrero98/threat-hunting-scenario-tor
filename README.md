@@ -7,7 +7,7 @@
 - [Scenario Creation](https://github.com/dmarrero98/threat-hunting-scenario-tor/blob/e6017c4bf0a7d9714342dadc5e9d55cc1635a344/threat-hunting-scenario-tor-event-creation.md)
 
 ## Platforms and Languages Leveraged
-- Windows 10 Virtual Machines (Microsoft Azure)
+- Windows 11 Virtual Machines (Microsoft Azure)
 - EDR Platform: Microsoft Defender for Endpoint
 - Kusto Query Language (KQL)
 - Tor Browser
