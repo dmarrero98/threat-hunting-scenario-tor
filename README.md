@@ -28,7 +28,7 @@ Management suspects that some employees may be using TOR browsers to bypass netw
 
 ### 1. Searched the `DeviceFileEvents` Table
 
-Searched for any file that had the string "tor" in it and discovered what looks like the user "dillan" downloaded a TOR installer, did something that resulted in many TOR-related files being copied to the desktop. These events began at `Oct 30, 2025 4:05:51 PM`.
+Searched for any file that had the string "tor" in it and discovered what looks like the user "dillan" downloaded a TOR installer, did something that resulted in many TOR-related files being copied to the desktop. These events began at `Oct 30, 2025 4:05:51 PM`. The user also deleted tor related files at `Oct 30, 2025 4:28:11 PM` roughly 30 minutes after the initial installation.
 
 **Query used to locate events:**
 
@@ -37,7 +37,7 @@ DeviceFileEvents
 | where DeviceName == "bossv2-win11"
 | where FileName contains "tor"
 ```
-
+<img width="1212" alt="image" src="https://github.com/dmarrero98/threat-hunting-scenario-tor/blob/main/screenshots/tor2.png">
 
 ---
 
@@ -55,7 +55,7 @@ DeviceProcessEvents
 | order by Timestamp desc
 | project Timestamp, ActionType, FileName, Account = InitiatingProcessAccountName, FolderPath
 ```
-
+<img width="1212" alt="image" src="https://github.com/dmarrero98/threat-hunting-scenario-tor/blob/main/screenshots/tor3.png">
 
 ---
 
@@ -72,6 +72,7 @@ DeviceProcessEvents
 | where FileName has_any ("tor.exe", "firefox.exe", "torbrowser.exe", "tbb-launcher.exe", "start-tor-browser.exe", "tor-gui.exe", "torservice.exe")
 | order by Timestamp desc
 ```
+<img width="1212" alt="image" src="https://github.com/dmarrero98/threat-hunting-scenario-tor/blob/main/screenshots/tor4.png">
 
 ---
 
