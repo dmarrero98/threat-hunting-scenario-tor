@@ -91,7 +91,7 @@ DeviceNetworkEvents
 | project Timestamp, ActionType, RemoteIP, RemotePort, LocalIP, InitiatingProcessFileName
 
 ```
-
+<img width="1212" alt="image" src="https://github.com/dmarrero98/threat-hunting-scenario-tor/blob/main/screenshots/tor1.png">
 
 ---
 
